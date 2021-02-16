@@ -4,10 +4,10 @@ import SidebarHeader from './SidebarHeader';
 import Search from './Search';
 import Chatrooms from './Chatrooms';
 
-function Sidebar() {
+function Sidebar({ user }) {
     return (
         <div className="sidebar">
-            <SidebarHeader />
+            <SidebarHeader user={user}/>
             <Search />
             <Chatrooms />
         </div>

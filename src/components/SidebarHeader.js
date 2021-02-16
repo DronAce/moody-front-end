@@ -4,12 +4,16 @@ import DonutLargeIcon from '@material-ui/icons/DonutLarge'
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import ChatIcon from '@material-ui/icons/Chat'
 
-function SidebarHeader() {
+function SidebarHeader({ user }) {
+    console.log("Sidebar", user)
+    const { name } = user
 
     return (
         <div className="sidebar__header">
             <Avatar />
+            <h1> {name} </h1>
             <div className="sidebar__headerRight">
+                
                 <IconButton>
                     <DonutLargeIcon/>
                 </IconButton>
