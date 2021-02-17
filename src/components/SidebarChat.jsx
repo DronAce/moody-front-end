@@ -3,16 +3,16 @@ import './css/SidebarChat.css';
 import {Avatar} from '@material-ui/core'
 
 
-function SidebarChat({room}) {
+function SidebarChat({ chatroom, showChat }) {
 
-    // const lastMessage = room.messages.last()
+    const last = chatroom.messages[chatroom.messages.length-1]
 
     return (
-        <div className="sidebarChat">
+        <div className="sidebarChat" onClick={() => showChat(chatroom.id)}>
             <Avatar /* src={user.image} */ />
             <div className="sidebarChat__info">
-                <h2>{/*room.name*/}</h2>
-                <p>{/* lastMessage */}</p>
+                <h2>{chatroom.name}</h2>
+                <p>{last? last.text : ""}</p>
             </div>
         </div>
     )

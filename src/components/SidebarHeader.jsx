@@ -5,7 +5,6 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import ChatIcon from '@material-ui/icons/Chat'
 
 function SidebarHeader({ user }) {
-    console.log("Sidebar", user)
     const { name } = user
 
     return (
