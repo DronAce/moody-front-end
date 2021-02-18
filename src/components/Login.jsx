@@ -19,7 +19,7 @@ function Login({users, setUser}) {
                 <img className="logo" src="https://i.ibb.co/Fn43nT0/Moody2png.png" alt="Moody" />
                 
                 <div>
-                    <img className="signin" src="https://i.ibb.co/5WsJ9SC/Moody-Logo2.png" alt="Moody" />
+                    <img className="signin avatar" src="https://i.ibb.co/5WsJ9SC/Moody-Logo2.png" alt="Moody" />
                 </div>
                 <form>
                     <p><input type = "text" placeholder = "username" onChange={(e) => setLoginUser(e.target.value)}/></p>

@@ -7,14 +7,14 @@ function ChatHeader({user, chat, room}) {
 
     // const last = chat.messages[chat.messages.length -1]
     const time = chat[chat.length-1]
-
+    console.log("roomname", room)
  
 
     return (
         <div className='chat__header'>
             <Avatar />
             <div className='chat__headerInfo'>
-                <h3 className='chat-room-name'>{room.name}</h3>
+                <h3 className='chat-room-name'>{room.name == user.name ? room.name2 : room.name}</h3>
                 <p className='chat-room-last-seen'>
                     Last seen: {time ? time.created_at : ""}
                 </p>

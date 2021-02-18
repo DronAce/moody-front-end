@@ -74,7 +74,8 @@ function App() {
         const newChatroom = {
             name: contact.name,
             user_id: user.id,
-            contact_id: contact.id
+            contact_id: contact.id,
+            name2: user.name
         }
 
         fetch(`http://localhost:4000/chatrooms`, {
@@ -87,8 +88,8 @@ function App() {
            setRoom(data)
             console.log("roomapp", data)
            showChat(data.id)
-            const updatedchatrooms = [...chatrooms, data]
-           console.log("update", updatedchatrooms)
+        //     const updatedchatrooms = [...chatrooms, data]
+        //    setChatrooms(updatedchatrooms)
            setSearch("")
         })
         

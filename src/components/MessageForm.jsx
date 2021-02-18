@@ -21,6 +21,7 @@ function MessageForm({newMessage, setMessage}) {
                     <option value= "confused">Confused</option>
                     <option value= "serious">Serious</option>
                     <option value= "playful">Playful</option>
+                    <option value= "passionate">Passionate</option>
                 </select>
                 <input type="text" placeholder="Type a message" onChange={(e) => setMessage(e.target.value)}/>
                 <button type="submit"> Send</button>

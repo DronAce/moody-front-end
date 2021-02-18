@@ -11,7 +11,7 @@ function Chat({newMessage, setMessage, chat, user, room, users}) {
         <div className='chat'>
             {chat? <ChatHeader room={room} user={user} chat={chat}/> : null}
             {chat? <ChatBody key={chat.id} user={user} chat={chat} room={room} users={users}/> :  
-            <img className="logo" src="https://i.ibb.co/Fn43nT0/Moody2png.png" alt="Moody" />}
+            <img className="logo avatar" src="https://i.ibb.co/Fn43nT0/Moody2png.png" alt="Moody" />}
             {chat? <MessageForm newMessage={newMessage} setMessage={setMessage}/> : 
              <img className="logoname" src="https://i.ibb.co/rv88Wyw/Moody-Logo1.png" alt="Moody" />}
         </div>

@@ -9,9 +9,11 @@ function Sidebar({ user, chatrooms, showChat, users, addContact, setSearch, sear
     
     const searchUsers = users.filter((user) => user.username.toLowerCase().includes(search.toLowerCase()))
     const searched = searchUsers.map((user) => <SearchResult user={user} addContact={addContact}/>)
+    const name = user.name
+    console.log(name)
 
     const userChatrooms = chatrooms.filter((chatroom) => user.id === chatroom.user_id || user.id === chatroom.contact_id)
-    const renderChatroom = userChatrooms.map((chatroom) => <Chatrooms key={chatroom.id} chatroom={chatroom} showChat={showChat}/>)
+    const renderChatroom = userChatrooms.map((chatroom) => <Chatrooms name={name} key={chatroom.id} chatroom={chatroom} showChat={showChat}/>)
 
     return (
         <div className="sidebar">
