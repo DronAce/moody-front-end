@@ -13,7 +13,9 @@ function App() {
     const [chatrooms, setChatrooms] = useState([])
     const [message, setMessage] = useState()
     const [chat, setChat] = useState()
+    const [room, setRoom] = useState(null)
     const [roomId, setRoomId] = useState()
+    const [search, setSearch] = useState("")
 
 
     useEffect(() => {
@@ -36,9 +38,14 @@ function App() {
         fetch(`http://localhost:4000/chatrooms/${roomId}`)
         .then((res) => res.json())
         .then((data) => {
-            setChat(data)
+            setRoom(data)
+            console.log("roomapp", data)
+            let messageArray = data.messages
+            setChat(messageArray)
+            console.log("showChat", data.messages)
         })
     }
+
     
     function newMessage(e, emotion) {
         e.preventDefault()
@@ -46,7 +53,7 @@ function App() {
             user_id: user.id,
             text: message,
             emotion: emotion,
-            chatroom_id: chat.id
+            chatroom_id: room.id
         }
 
         fetch(`http://localhost:4000/messages`, {
@@ -56,7 +63,9 @@ function App() {
         })  
         .then((res) => res.json())
         .then(data =>{
-           console.log(data)
+           console.log("newMessage", data)
+           const updatedchat = [...chat, data]
+           setChat(updatedchat)
         })
         e.target.reset()
     }
@@ -75,8 +84,14 @@ function App() {
         })  
         .then((res) => res.json())
         .then(data =>{
-           console.log(data)
+           setRoom(data)
+            console.log("roomapp", data)
+           showChat(data.id)
+            const updatedchatrooms = [...chatrooms, data]
+           console.log("update", updatedchatrooms)
+           setSearch("")
         })
+        
     }
 
     return ( 
@@ -85,8 +100,8 @@ function App() {
                 <Login users={users} setUser={setUser}/>
             ) : ( 
             < div className = "app__body" > 
-                <Sidebar key={user.id} user={user} chatrooms={chatrooms} showChat={showChat} users={users} addContact={addContact} />
-                <Chat chat={chat} newMessage={newMessage} setMessage={setMessage} user={user} /> 
+                <Sidebar setSearch={setSearch} search={search} key={user.id} user={user} chatrooms={chatrooms} showChat={showChat} users={users} addContact={addContact} />
+                <Chat chat={chat} newMessage={newMessage} setMessage={setMessage} user={user} room={room} users={users}/> 
             </div> )}   
         </div>
     );

@@ -41,6 +41,7 @@
     justify-content: space-between;
     padding: 20px;
     border-right: 1px solid lightgrey;
+    color: grey;
 }
 
 .sidebar__headerRight {
@@ -58,6 +59,4 @@
 .sidebar__chats {
     flex: 1;
     background-color: white;
-    overflow: hidden;
-    border-radius: 15px;
 }

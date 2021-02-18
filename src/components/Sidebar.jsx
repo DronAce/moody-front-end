@@ -5,8 +5,8 @@ import Search from './Search';
 import Chatrooms from './Chatrooms';
 import SearchResult from './SearchResult'
 
-function Sidebar({ user, chatrooms, showChat, users, addContact }) {
-    const [search, setSearch] = useState("")
+function Sidebar({ user, chatrooms, showChat, users, addContact, setSearch, search }) {
+    
     const searchUsers = users.filter((user) => user.username.toLowerCase().includes(search.toLowerCase()))
     const searched = searchUsers.map((user) => <SearchResult user={user} addContact={addContact}/>)
 
