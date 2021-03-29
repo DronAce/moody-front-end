@@ -12,7 +12,9 @@ function ChatHeader({user, chat, room}) {
 
     return (
         <div className='chat__header'>
+        <div className="event" alt='SweetLandia' id='sweetlandia'>
             <Avatar />
+            </div>
             <div className='chat__headerInfo'>
                 <h3 className='chat-room-name'>{room.name == user.name ? room.name2 : room.name}</h3>
                 <p className='chat-room-last-seen'>

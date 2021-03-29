@@ -9,7 +9,10 @@ function SidebarHeader({ user }) {
 
     return (
         <div className="sidebar__header">
+            
+            <div className="avatar">
             <Avatar />
+            </div>
             <h1> {name} </h1>
             <div className="sidebar__headerRight">
                 
